@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sections-container">
+    <section class="section" id="delivery-section">
+      <h2>Доставляется</h2>
+      <div class="delivery-container"></div>
+    </section>
+
+    <section class="section" id="delivered-section">
+      <h2>Доставлено</h2>
+      <div class="delivery-container"></div>
+    </section>
+
+    <section class="section" id="canceled-section">
+      <h2>Отменено</h2>
+      <div class="delivery-container"></div>
+    </section>
+  </div>
+
+  <button id="calculate-distance" class="calculate-btn">Общее расстояние</button>
+  <div id="total-distance" class="total-distance">Общее расстояние: 0 км</div>
+
+  <div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Изменить</h2>
+      <label>Имя:</label>
+      <input type="text" id="edit-name">
+      <label>Адрес:</label>
+      <input type="text" id="edit-address">
+      <label>Расстояние:</label>
+      <input type="number" id="edit-distance">
+      <label>Статус:</label>
+      <select id="edit-status">
+        <option value="delivery">Доставляется</option>
+        <option value="delivered">Доставлено</option>
+        <option value="canceled">Отменено</option>
+      </select>
+      <button id="save-edit">Сохранить</button>
+      <button id="close-modal">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

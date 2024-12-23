@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Попап с подарком</title>
+  <style>
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    .popup img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .popup button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #218838;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добро пожаловать на сайт!</h1>
+
+  <div class="overlay" id="overlay" style="display: none;"></div>
+
+  <script>
+    const giftArr = [
+      {
+        title: "Скидка 20% на первую покупку в нашем магазине!",
+        icon: "/img/discount.svg"
+      },
+      {
+        title: "Скидка 10% на всё!",
+        icon: "/img/discount_2.svg"
+      },
+      {
+        title: "Подарок при первой покупке в нашем магазине!",
+        icon: "/img/gift.svg"
+      },
+      {
+        title: "Бесплатная доставка для вас!",
+        icon: "/img/delivery.svg"
+      },
+      {
+        title: "Сегодня день больших скидок!",
+        icon: "/img/discount_3.svg"
+      }
+    ];
+
+    function getRandomGift() {
+      const randomIndex = Math.floor(Math.random() * giftArr.length);
+      return giftArr[randomIndex];
+    }
+
+    function showPopup() {
+      const gift = getRandomGift();
+
+      const popup = document.createElement('div');
+      popup.classList.add('popup');
+
+      const icon = document.createElement('img');
+      icon.src = gift.icon;
+      popup.appendChild(icon);
+
+      const title = document.createElement('h2');
+      title.textContent = gift.title;
+      popup.appendChild(title);
+
+      const button = document.createElement('button');
+      button.textContent = "Отлично!";
+      button.onclick = () => {
+        document.getElementById('overlay').style.display = 'none';
+        popup.remove();
+      };
+      popup.appendChild(button);
+
+      document.body.appendChild(popup);
+      document.getElementById('overlay').style.display = 'block'; 
+    }
+
+    setTimeout(showPopup, 3000);
+  </script>
+</body>
+</html>

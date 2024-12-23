@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список фильмов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <form id="movieForm">
+        <label>
+            Название:
+            <input type="text" id="title" required>
+        </label>
+        <label>
+            Жанр:
+            <input type="text" id="genre" required>
+        </label>
+        <label>
+            Год:
+            <input type="text" id="year" required>
+        </label>
+        <label>
+            <input type="checkbox" id="watched">
+            Успели посмотреть?
+        </label>
+        <button type="button" onclick="updateMovie()">Обновить</button>
+        <button type="button" onclick="cancelEdit()">Отменить редактирование</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Жанр</th>
+                <th>Год</th>
+                <th>Успели посмотреть?</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody id="movieTable">
+            <tr>
+                <td>Назад в будущее</td>
+                <td>Приключение</td>
+                <td>1985</td>
+                <td>Да</td>
+                <td class="actions">
+                    <button onclick="editMovie(this)">Редактировать</button>
+                    <button onclick="deleteMovie(this)">Удалить</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Матрица</td>
+                <td>Киберпанк</td>
+                <td>1999</td>
+                <td>Нет</td>
+                <td class="actions">
+                    <button onclick="editMovie(this)">Редактировать</button>
+                    <button onclick="deleteMovie(this)">Удалить</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button.add-book {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  button.search-book {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  ul.book-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.book-list li {
+    margin: 5px 0;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  ul.book-list li.highlight {
+    background-color: #ffeb3b;
+  }

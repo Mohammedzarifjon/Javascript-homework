@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма опроса</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Форма опроса</h1>
+
+    <!-- Форма -->
+    <form id="surveyForm">
+        <div>
+            <label for="name">Имя пользователя:</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error" id="nameError"></span>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error" id="emailError"></span>
+        </div>
+
+        <div>
+            <label>Пол:</label>
+            <input type="radio" id="male" name="gender" value="Мужской" required> Мужской
+            <input type="radio" id="female" name="gender" value="Женский" required> Женский
+            <span class="error" id="genderError"></span>
+        </div>
+
+        <div>
+            <label for="rating">Оценка сервиса:</label>
+            <input type="range" id="rating" name="rating" min="1" max="10" value="5">
+        </div>
+
+        <div>
+            <label>Интересы пользователя:</label>
+            <input type="checkbox" id="sport" name="interests" value="Спорт"> Спорт
+            <input type="checkbox" id="music" name="interests" value="Музыка"> Музыка
+            <input type="checkbox" id="travel" name="interests" value="Путешествия"> Путешествия
+            <input type="checkbox" id="cinema" name="interests" value="Кино"> Кино
+        </div>
+
+        <div>
+            <label for="comments">Дополнительные комментарии:</label>
+            <textarea id="comments" name="comments"></textarea>
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <!-- Результаты опроса -->
+    <h2>Результаты опроса:</h2>
+    <div id="result">
+        <!-- Результаты будут отображаться здесь -->
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

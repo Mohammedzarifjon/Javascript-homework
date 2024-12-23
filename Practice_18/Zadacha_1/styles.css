@@ -1,0 +1,39 @@
+.image-section {
+    background-color: #f0f0f0;  
+    padding: 10px 20px; 
+    margin: 20px auto; 
+    border-radius: 10px;
+    width: 650px; 
+  }
+  
+  .header {
+    background-color: #e0b3e2;  
+    padding: 10px;  
+    text-align: center;
+    border-radius: 10px 10px 0 0; 
+    margin-bottom: 40px;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center; 
+    gap: 10px;
+    flex-wrap: wrap; 
+    margin-bottom: 20px;
+  }
+  
+  img {
+    object-fit: cover;
+    border-radius: 5px; 
+  }
+  
+  .cat-images img {
+    width: 180px;
+    height: 180px; 
+  }
+  
+  .dog-images img {
+    width: 120px;
+    height: 120px; 
+  }
+  

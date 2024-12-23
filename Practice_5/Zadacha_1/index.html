@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+
+    <div class="content"></div>
+
+    <script>
+        const parentElement = document.querySelector('.content');
+        
+        const heading = document.createElement('h2');
+        heading.textContent = 'Это заголовок h2';
+        
+        const paragraph = document.createElement('p');
+        paragraph.textContent = 'Это параграф p. Здесь может быть любой текст.';
+        
+        parentElement.append(heading);
+        parentElement.append(paragraph);
+    </script>
+
+</body>
+</html>
